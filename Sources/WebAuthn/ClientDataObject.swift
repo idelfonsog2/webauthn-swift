@@ -14,8 +14,8 @@
 
 import Foundation
 
-struct ClientDataObject: Codable {
-    let challenge: String
-    let origin: String
-    let type: String
+public struct ClientDataObject: Codable {
+    public let challenge: String
+    public let origin: String
+    public let type: String
 }
