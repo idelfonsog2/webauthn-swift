@@ -15,6 +15,13 @@
 import Foundation
 
 public struct RegisterWebAuthnCredentialData: Codable {
+    public init(id: String, rawID: String, type: String, response: RegisterCredentialsResponse) {
+        self.id = id
+        self.rawID = rawID
+        self.type = type
+        self.response = response
+    }
+    
     public let id: String
     let rawID: String
     let type: String
@@ -29,6 +36,11 @@ public struct RegisterWebAuthnCredentialData: Codable {
 }
 
 public struct RegisterCredentialsResponse: Codable {
+    public init(attestationObject: String, clientDataJSON: String) {
+        self.attestationObject = attestationObject
+        self.clientDataJSON = clientDataJSON
+    }
+    
     let attestationObject: String
     let clientDataJSON: String
 }
